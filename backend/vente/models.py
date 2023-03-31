@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Utilisateur(User):
 
+	USERNAME_FIELD = "email"
+
 	def __str__(self):
 		return this.email
 
