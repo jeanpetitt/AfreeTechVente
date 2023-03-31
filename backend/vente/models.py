@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Utilisateur(User):
+	"""
+	nous faisons heriter a notre model le models user de django
+	car c'est un model simple qui comporte  les champs username, email firsname, last_name et password
+	"""
 
 	USERNAME_FIELD = "email"
 
