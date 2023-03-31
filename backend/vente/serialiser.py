@@ -3,20 +3,20 @@ from .models import *
 from django.contrib.auth import authenticate
 from django.http.response import Http404
 
-class UserSerialiser(serializers.Serializer):
+class UserSerialiser(serializers.ModelSerializer):
+    class Meta: 
+    	model = Utilisateur
+    	fields = ('email', 'first_name', 'last_name', 'password')
 
-	model = Utilisateur
-	fields = '__all__'
-
-class FruitSerialiser(serializers.Serializer):
-
-	model = Fruit
-	fields = '__all__'
+class FruitSerialiser(serializers.ModelSerializer):
+    class Meta:
+    	model = Fruit
+    	fields = '__all__'
 
 
 
 # user login serializer
-class UserLoginSerialiser(serializers.Serializer):
+class UserLoginSerialiser(serializers.ModelSerializer):
 
     email = serializers.EmailField()
     password = serializers.CharField()

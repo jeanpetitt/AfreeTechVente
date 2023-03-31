@@ -13,10 +13,17 @@ services:
       - db
 
   db:
-    container_name: vente_db
     image: postgres:14
     restart: always
+    environment:
+      - POSTGRES_DB=afreetech
+      - POSTGRES_PASSWORD=yvelos
+      - POSTGRES_USER=jean
+      - PGDATA=/var/lib/postgresql/data/pgdata
     ports:
       - '7082:5432'
-    env_file:
-      - "admin/database.py"
+    volumes:
+      - dbdata:/var/lib/postgresql/data/pgdata
+
+volumes:
+  dbdata:

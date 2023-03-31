@@ -8,28 +8,14 @@ from .serialiser import *
 
 
 # vues permettant d'acceder au fruit
-class FruitViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.RetrieveModelMixin):
-	permission_classes = (permissions.AllowAny,)
-	serializer_class = FruitSerialiser
-	queryset = Fruit.objects.all()
+class FruitViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
+    permission_classes = (permissions.AllowAny,)
+    serializer_class = FruitSerialiser
+    queryset = Fruit.objects.all()
     
 
-# poster un fruit destiner pour la vente
-class FruitViewsetPost(viewsets.GenericViewSet, mixins.CreateModelMixin):
-    permission_classes = (permissions.IsAuthenticated,)
-    authentication_classes= (SessionAuthentication)
-    serializer_class = FruitSerialiser
-    queryset = Fruit.objects.all()
-
-# modifier un fruit ceci concerne plus son etat
-class FruitViewsetUpdate(viewsets.GenericViewSet, mixins.UpdateModelMixin):
-    permission_classes = (permissions.IsAuthenticated,)
-    authentication_classes= (SessionAuthentication)
-    serializer_class = FruitSerialiser
-    queryset = Fruit.objects.all()
-
 # vues d'inscription d'un utilisateur
-class UserRegisterViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin):
+class UserRegisterView(viewsets.GenericViewSet, mixins.CreateModelMixin):
     permission_classes = (permissions.AllowAny,)
     serializer_class = UserSerialiser
     queryset = Utilisateur.objects.all()
@@ -37,11 +23,10 @@ class UserRegisterViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin):
 
 # vues permettant de mettre ajour un utilisateur
 class UserViewset(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin):
-    permission_classes = (permissions.IsAuthenticated, )
-    authentication_classes = (SessionAuthentication)
+    # permission_classes = (permissions.IsAuthenticated, )
+    # authentication_classes = (SessionAuthentication, )
     serializer_class = UserSerialiser
     queryset = Utilisateur.objects.all()
-
 
 
 
@@ -64,8 +49,6 @@ class UserLoginView(APIView):
             login(request, user)
             return Response(serializer.data, status=status.HTTP_200_OK)
     
-
-
 
 """
     create view to logout user
