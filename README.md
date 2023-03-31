@@ -49,12 +49,34 @@ sudo apt install postgresql-client postgresql -y
 ```
 pour installer docker sur linux il suffit de le telecharger dans le appstore
 
-# Stack
-nous avons deux stack backend et frontend. pour plus de detail cliquer sur [backend](./backend/README.md) ou
-[frontend](./frontend/README.md)
+## A propos des Stack
+
+### backend 
+naviguer dans le dossier backend et executer
+```
+docker-compose up
+```
+cette application met notre application en developpememt et ordonne a l'application de pacourir le [Dockerfile](./backend/Dockerfile) et le [docker-compose.yml](./docker-compose.yml) pour installer differentes dependances.<br>
+Une fois les dependances installer l'application va se mettre en route sur le 0.0.0.0:8080<br>
+pour plus de detail cliquer sur [backend](./backend/README.md)
+
+### frontend
+naviguer dans le dossier frontend et executer la commande:
+```
+npm install
+```
+cela va installer toute les dependances necessaires pour le lancement de l'application
+
+```
+npm start
+```
+cette commance va mettre en route l'application sur le localhost:3000.
+
+pour plus de detail cliquer sur [frontend](./frontend/README.md)
 
 
-# Deployement
+
+## Deployement
 
 
 # Autheur
