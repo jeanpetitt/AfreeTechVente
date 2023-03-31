@@ -4,3 +4,7 @@ __pycache__
 
 # virtual environnement
 env/
+
+# other file private
+database.py
+
