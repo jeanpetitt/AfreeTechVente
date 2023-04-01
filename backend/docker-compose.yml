@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8080:8000
+    networks:
+      - djangonetwork
     volumes:
       - .:/app
 
@@ -22,8 +24,14 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     ports:
       - '7082:5432'
+    networks:
+      - djangonetwork
     volumes:
       - dbdata:/var/lib/postgresql/data/pgdata
+
+networks:
+  djangonetwork:
+    driver: bridge
 
 volumes:
   dbdata:
