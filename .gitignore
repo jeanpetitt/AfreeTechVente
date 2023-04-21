@@ -6,5 +6,4 @@ __pycache__
 env/
 
 # other file private
-database.py
 database.env
