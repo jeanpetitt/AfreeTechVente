@@ -1,56 +1,67 @@
+import ananas from "../assets/ananas.jpeg"
+
 export const fruitList = [
     {
 		name: 'avocat',
-		category: 'classique',
+		category: 'fraid',
 		id: '1ed',
-        isBestSale: true
+        isBestSale: true,
+		image: ananas
 	},
 	{
 		name: 'pomme',
-		category: 'classique',
+		category: 'fraid',
 		id: '2ab',
-        isBestSale: true
+        isBestSale: true,
+		image: ananas
 	},
 	{
 		name: 'mangue',
-		category: 'classique',
+		category: 'fraid',
 		id: '3sd',
-        isBestSale: true
+        isBestSale: true,
+		image: ananas
 	},
 	{
 		name: 'goyave',
-		category: 'classique',
+		category: 'fraid',
 		id: '4kk',
-        isBestSale: true
+        isBestSale: true,
+		image: ananas
 	},
 	{
 		name: 'datte',
-		category: 'extérieur',
+		category: 'humide',
 		id: '5pl',
-        isBestSale: true
+        isBestSale: true,
+		image: ananas
 	},
 	{
 		name: 'fraize',
-		category: 'extérieur',
+		category: 'humide',
 		id: '6uo',
-        isBestSale: true
+        isBestSale: true,
+		image: ananas
 	},
 	{
 		name: 'framboise',
 		category: 'extérieur',
 		id: '7ie',
-        isBestSale: true
+        isBestSale: true,
+		image: ananas
 	},
 	{
 		name: 'papaye',
-		category: 'fruit tres juteux et sucre',
+		category: 'doux',
 		id: '8fp',
-        isBestSale: true
+        isBestSale: true,
+		image: ananas
 	},
 	{
 		name: 'ananas',
-		category: 'fruit tres juteux et sucree',
+		category: 'doux',
 		id: '9vn',
-        isBestSale: true
+        isBestSale: true,
+		image: ananas
 	}
 ]

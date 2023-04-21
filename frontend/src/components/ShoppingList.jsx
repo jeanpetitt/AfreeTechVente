@@ -1,5 +1,7 @@
 import React from 'react'
 import { fruitList } from '../data/fruitList'
+import "../styles/shoppingList.css"
+import FruitItem from './FruitItem'
 
 function ShoppingList() {
     const categories = fruitList.reduce(
@@ -10,19 +12,20 @@ function ShoppingList() {
 
 
   return (
-    <div>
+    <div className=''>
         <ul>
 			{categories.map((cat) => (
-					<li key={cat}>{cat}</li>
+				<li key={cat}>{cat}</li>
 			))}
 		</ul>
-        <ul>
+        <ul className='afre-fruit-list'>
             {fruitList.map((fruit) => (
-                <li key={fruit.id}>
-                    {fruit.name}
-                    {fruit.isBestSale && <span>🔥</span>}
-                </li>
-                // <p>{fruit.description}</p>
+                <FruitItem
+					name={fruit.name}
+					id={fruit.id}
+					isBestSale={fruit.isBestSale}
+					cover={fruit.image}
+				/>
             ))}
         </ul>
     </div>
