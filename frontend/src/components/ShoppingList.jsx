@@ -3,7 +3,7 @@ import { fruitList } from '../data/fruitList'
 import "../styles/shoppingList.css"
 import FruitItem from './FruitItem'
 
-function ShoppingList() {
+function ShoppingList({ cart, updateCart }) {
     const categories = fruitList.reduce(
 		(acc, fruit) =>
 			acc.includes(fruit.category) ? acc : acc.concat(fruit.category),
@@ -12,20 +12,23 @@ function ShoppingList() {
 
 
   return (
-    <div className=''>
-        <ul>
+    <div className='afre-shoppingList'>
+        {/* <ul>
 			{categories.map((cat) => (
 				<li key={cat}>{cat}</li>
 			))}
-		</ul>
+		</ul> */}
         <ul className='afre-fruit-list'>
-            {fruitList.map((fruit) => (
-                <FruitItem
-					name={fruit.name}
-					id={fruit.id}
-					isBestSale={fruit.isBestSale}
-					cover={fruit.image}
-				/>
+            {fruitList.map(({name,id, image, isBestSale}) => (
+				<div id={id}>
+					<FruitItem
+						name={name}
+						id={id}
+						isBestSale={isBestSale}
+						cover={image}
+					/>
+					<button onClick={() => updateCart(cart + 1)}>Ajouter</button>
+				</div>
             ))}
         </ul>
     </div>

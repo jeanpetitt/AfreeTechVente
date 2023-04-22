@@ -1,4 +1,4 @@
-import ananas from "../assets/ananas.jpeg"
+import ananas from "../assets/adobe3.jpg"
 
 export const fruitList = [
     {

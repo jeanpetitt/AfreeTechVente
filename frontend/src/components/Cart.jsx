@@ -1,22 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "../styles/cart.css"
 
 
-function Cart() {
-    const manguePrice = 8
-	const orangePrice = 10
-	const tomatePrice = 15
-  return (
-    <div className='afree-cart'>
+function Cart({cart, updateCart}) {
+	const manguePrice = 8
+	const [isOPen, setIsOpen] = useState(false)
+  return isOPen ? (
+    <div className='afre-cart'>
+		<button onClick={() => setIsOpen(false)} className='.afre-cart-add-button'>Fermer</button>
 		<h2>Cart</h2>
-		<ul>
-			<li>mangue : {manguePrice}€</li>
-			<li>orange : {orangePrice}€</li>
-			<li>tomate : {tomatePrice}€</li>
-		</ul>
-		Total : {manguePrice + orangePrice + tomatePrice}€
+		
+		Total : {manguePrice *cart}€
+		<button onClick={() => updateCart(0)} className='.afre-cart-add-button'>vider le panier</button>
 	</div>
-  )
+	
+  ): 
+  <div className="afre-cart-closed">
+	<button onClick={() => setIsOpen(true)}>ouvrir le panier</button>
+  </div>
 }
 
 export default Cart;
